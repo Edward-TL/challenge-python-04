@@ -1,7 +1,6 @@
 def div(func):
     def wrapper(*args, **kwargs):
         text_function = func(args[0])
-        # func = func(*args, **kwargs)
         print(f'<div> {text_function} </div>')
         return text_function
 
@@ -10,7 +9,6 @@ def div(func):
 def article(func):
     def wrapper(*args, **kwargs):
         text_function = func(args[0])
-        # func = func(*args, **kwargs)
         print(f'<article> {text_function} </article>')
         return text_function
 
@@ -20,9 +18,6 @@ def article(func):
 def p(func):
     def wrapper(*args, **kwargs):
         text_function = func(args[0])
-        # # func = func(*args, **kwargs)
-        # print(f'<p> {text_function} </p>')
-        # return text_function
         return f'<p> {text_function} </p>'
 
     return wrapper
