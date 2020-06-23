@@ -1,36 +1,36 @@
 def div(func):
     def wrapper(*args, **kwargs):
-        text_function = func(*args, **kwargs)
+        text_function = func(args[0])
         # func = func(*args, **kwargs)
         print(f'<div> {text_function} </div>')
-        
-    return wrapper
+        return text_function
 
+    return wrapper
 
 def article(func):
     def wrapper(*args, **kwargs):
-        text_function = func(*args, **kwargs)
+        text_function = func(args[0])
         # func = func(*args, **kwargs)
         print(f'<article> {text_function} </article>')
         return text_function
-        
+
     return wrapper
 
 
 def p(func):
     def wrapper(*args, **kwargs):
-        text_function = func(*args, **kwargs)
-        # func = func(*args, **kwargs)
-        print(f'<p> {text_function} </p>')
-        return text_function
-        
+        text_function = func(args[0])
+        # # func = func(*args, **kwargs)
+        # print(f'<p> {text_function} </p>')
+        # return text_function
+        return f'<p> {text_function} </p>'
+
     return wrapper
-
-
+    
 # Here you must apply the decorators, uncomment this later
-@div
-@article
 @p
+@article
+@div
 def saludo(nombre):
     return f'¡Hola {nombre}, ¿Cómo estás?'
 
